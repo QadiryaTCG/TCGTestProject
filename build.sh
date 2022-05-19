@@ -1,0 +1,1 @@
+dotnet test --filter "TestCategory=Marketplace&TestCategory=Smoke"
