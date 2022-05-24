@@ -21,8 +21,17 @@ using TCGplayerUI.TestSetUp;
 
 namespace TCGplayerUI.TestCases
 {
-
     [TestFixture]
+    //[TestFixture("chrome", "101", "Windows 10")]
+    //[TestFixture("internet explorer", "11", "Windows 10")]
+    //[TestFixture("firefox", "60", "Windows 7")]
+    //[TestFixture("chrome", "95", "Windows 11")]
+    //[TestFixture("internet explorer", "11", "Windows 10")]
+    //[TestFixture("firefox", "58", "Windows 7")]
+    //[TestFixture("chrome", "67", "Windows 7")]
+    //[TestFixture("internet explorer", "10", "Windows 7")]
+    //[TestFixture("firefox", "55", "Windows 7")]
+    //[Parallelizable(ParallelScope.Children)]
     public class LoginTest : StartBrowser
     {
         public LoginTest() : base(SetUpClass.extent) { }

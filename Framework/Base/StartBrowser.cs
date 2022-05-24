@@ -23,17 +23,18 @@ namespace Framework.Base
 {
     [TestFixture("chrome", "101", "Windows 10")]
     [TestFixture("internet explorer", "11", "Windows 10")]
-    // [TestFixture("firefox", "60", "Windows 7")]
+    //[TestFixture("firefox", "60", "Windows 7")]
     //[TestFixture("chrome", "95", "Windows 11")]
     //[TestFixture("internet explorer", "11", "Windows 10")]
     //[TestFixture("firefox", "58", "Windows 7")]
     //[TestFixture("chrome", "67", "Windows 7")]
     //[TestFixture("internet explorer", "10", "Windows 7")]
     //[TestFixture("firefox", "55", "Windows 7")]
-    //[Parallelizable(ParallelScope.Children)]
+    [Parallelizable(ParallelScope.Children)]
 
     public class StartBrowser
     {
+    
         public static ThreadLocal<IWebDriver> driver = new ThreadLocal<IWebDriver>();
 
         protected static readonly object ConfigReader;
@@ -86,9 +87,9 @@ namespace Framework.Base
             Dictionary<string, object> ltOptions = new Dictionary<string, object>();
             ltOptions.Add("build", "Qadirya");
             ltOptions.Add("name", "Qadirya test");
-            ltOptions.Add("browserName", browser);
-            ltOptions.Add("browserVersion", version);
-            ltOptions.Add("platformName", os);
+            ltOptions.Add("browserName", "chrome");
+            ltOptions.Add("browserVersion", "101");
+            ltOptions.Add("platformName", "Windows 10");
             ltOptions.Add("user", LT_USERNAME);
             ltOptions.Add("accessKey", LT_ACCESS_KEY);
             ltOptions.Add("visual", true);
