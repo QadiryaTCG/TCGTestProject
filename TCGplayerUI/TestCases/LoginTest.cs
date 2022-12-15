@@ -7,16 +7,11 @@ using System.IO;
 using AventStack.ExtentReports.Reporter;
 using TCGplayerUI.PageObjects.MarketPlace;
 
-namespace TCGplayerUI.TestCases.Direct.SmokeTests
+namespace TCGplayerUI.TestCases
 {
 
-    // [TestFixture("parallel", "firefox")]
-    [TestFixture("parallel", "chrome")]
-    [TestFixture("parallel", "safari")]
-    [Parallelizable(ParallelScope.All)]
     public class LoginTest : StartBrowser
     {
-        //   public DirectRISmoke() : base(SetUpClass.extent) { }
 
         HomePage homePage;
         LoginPage loginPage;
@@ -36,6 +31,7 @@ namespace TCGplayerUI.TestCases.Direct.SmokeTests
             StartBrowser.childTest = StartBrowser.parentTest.CreateNode("Login For Direct Admin");
             Thread.Sleep(3000);
             homePage.ClosePopUp();
+            homePage.ClickOnSignIn();
             homePage.IsmarketplaceHeaderExist();
             homePage.AssertShoppingCartDisplayed();
             homePage.AssertSearchBarDisplayed();

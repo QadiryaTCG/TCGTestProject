@@ -20,6 +20,9 @@ namespace Framework.Base
 {
 
     [TestFixture]
+   // [TestFixture("parallel", "safari")]
+     [TestFixture("parallel", "chrome")]
+    [Parallelizable(ParallelScope.All)]
 
     public class StartBrowser
     {
@@ -100,8 +103,12 @@ namespace Framework.Base
                 ltOptions.Add("accessKey", accesskey);
                 Console.Out.WriteLine("AccessKey" + accesskey);
             }
+
             ltOptions.Add("name", testname);
-            ltOptions.Add("idleTimeout", "125");
+            ltOptions.Add("dedicatedProxy", true);
+            string[] fileNames = { "DuskCharger.jpg", "SmallSYPPullSheet.csv", "MagicandPokemon.csv", "Everything50.csv" };
+            ltOptions.Add("lambda:userFiles", fileNames);
+
             capability.AddMetadataSetting("LT:Options", ltOptions);
 
             Console.WriteLine("LTOPTIONSMATRIX----" + ltOptions);
@@ -109,7 +116,11 @@ namespace Framework.Base
             Console.WriteLine("CAPABILTYMATRIX----" + capability);
 
             driver.Value = new RemoteWebDriver(new Uri("http://" + ConfigurationManager.AppSettings.Get("server") + "/wd/hub/"), capability, TimeSpan.FromSeconds(600));
-
+            var allowsDetection = driver.Value as IAllowsFileDetection;
+            if (allowsDetection != null)
+            {
+                allowsDetection.FileDetector = new LocalFileDetector();
+            }
 
         }
         [SetUp]
@@ -119,7 +130,7 @@ namespace Framework.Base
 
         }
 
-        [OneTimeTearDown]
+        [TearDown]
         public void ExtentClose()
         {
             bool passed = TestContext.CurrentContext.Result.Outcome.Status == NUnit.Framework.Interfaces.TestStatus.Passed;
@@ -138,4 +149,3 @@ namespace Framework.Base
 
     }
 }
-
