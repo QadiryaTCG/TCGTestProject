@@ -106,8 +106,8 @@ namespace Framework.Base
 
             ltOptions.Add("name", testname);
             ltOptions.Add("dedicatedProxy", true);
-            string[] fileNames = { "DuskCharger.jpg", "SmallSYPPullSheet.csv", "MagicandPokemon.csv", "Everything50.csv" };
-            ltOptions.Add("lambda:userFiles", fileNames);
+          //  string[] fileNames = { "DuskCharger.jpg", "SmallSYPPullSheet.csv", "MagicandPokemon.csv", "Everything50.csv" };
+           // ltOptions.Add("lambda:userFiles", fileNames);
 
             capability.AddMetadataSetting("LT:Options", ltOptions);
 
