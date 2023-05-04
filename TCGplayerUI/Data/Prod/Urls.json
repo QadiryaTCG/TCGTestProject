@@ -1,0 +1,14 @@
+{
+  // Marketplace Urls
+  "baseUrl": "https://www.tcgplayer.com/",
+  "newPDpageUrl": "https://www.tcgplayer.com/product/3368/blood-moon-chronicles-magic",
+  "massEntryUrl": "https://www.tcgplayer.com/massentry",
+  "nonMagicPDPageUrl": "https://www.tcgplayer.com/product/195882/brilliant-barrier-betrayal-argent-saga-tcg?q=brilliant%20barrier",
+  "listosPDpageUrl": "https://www.tcgplayer.com/product/listing/90u24CMHeg81/magic-beta-edition-black-lotus",
+  "deckbuilderUrl": "https://decks.tcgplayer.com/magic",
+  "searchUrl": "https://www.tcgplayer.com/search/all/product",
+  "paginationUrl": "https://www.tcgplayer.com/search/all/product?view=grid&page=2",
+  "gridViewUrl": "https://www.tcgplayer.com/search/all/product?view=grid",
+  "404PageUrl": "https://www.tcgplayer.com/notapage"
+
+}

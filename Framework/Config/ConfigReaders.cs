@@ -21,8 +21,8 @@ namespace Framework.Config
 
             if (env == null)
             {
-                Console.WriteLine("ASPNETCORE_ENVIRONMENT='', setting to {0} by default", "QA");
-                Environment.SetEnvironmentVariable("ASPNETCORE_ENVIRONMENT", "QA");
+                Console.WriteLine("ASPNETCORE_ENVIRONMENT='', setting to {0} by default", "Prod");
+                Environment.SetEnvironmentVariable("ASPNETCORE_ENVIRONMENT", "Prod");
                 env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
 
             }
